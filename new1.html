@@ -1,8 +1,99 @@
 <html>
-    <head>
-        <title>New Git Learning </title>
-    </head>
-    <body>
-        Hi Kalai
-    </body>
+
+
+<head>
+<title> My Page</title>
+<link rel="icon" type="image/x-icon" href="title.ico">
+
+
+
+<script>
+function myFunction() {
+document.getElementById("new2").innerHTML="New changes";
+}
+</script>
+
+</head>
+<body>
+
+
+
+<h2>JavaScript Geolocation</h2>
+
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+<p id="locationDisplay"> </p>
+
+<script>
+const x = document.getElementById("demo");
+
+function getLocation1() {
+  try {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } catch {
+    x.innerHTML = err;
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+function getLocation() {
+  const x = document.getElementById("locationDisplay"); // Ensure x is defined
+
+  try {
+    navigator.geolocation.getCurrentPosition(showPosition,
+      function(error) {
+	  alert("Error : " + error.message);
+        x.innerHTML = "Error: " + error.message; // Error handling
+      }
+    );
+  } catch (err) {
+    x.innerHTML = "An error occurred: " + err.message; // Catch block should handle the error
+  }
+}
+
+function showPosition(position) {
+  const x = document.getElementById("locationDisplay"); // Ensure x is defined
+  alert("Latitude :" + position.coords.latitude + "<br> "Longitude :" + position.coords.longitude);
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+
+
+
+</script>
+
+
+<p  id="new2"> Try to change </p>
+
+<button type="button" onclick="myFunction()"> Old Para </button>
+
+
+
+
+
+
+<p style="color:red;">This is a red paragraph.</p>
+<p style="color:green;"> Hi Kalai </p>
+
+
+
+
+<center>
+
+
+
+<img id="myimg" src="fan.jpg" style="width:300px" > <br>
+<button onclick='document.getElementById("myimg").src="fan.gif"'> Turn on Fan </button> <br>
+<button type="button" onclick="document.getElementById('myimg').src='fan.jpg'"> Turn Of fan </button>
+
+</center>
+
+</body>
 </html>
+
